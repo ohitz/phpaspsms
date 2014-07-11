@@ -2,7 +2,7 @@ phpaspsms
 =========
 
 The SMS class provides a simple way to create a Web-based SMS gateway
-using the [aspsms.com](www.aspsms.com) SMS service.
+using the [aspsms.com](http://www.aspsms.com) SMS service.
 
 Disclaimer: This is quite old code, so it may not be using all the
 latest PHP functionality.
