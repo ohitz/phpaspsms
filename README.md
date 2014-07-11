@@ -2,12 +2,12 @@ phpaspsms
 =========
 
 The SMS class provides a simple way to create a Web-based SMS gateway
-using the aspsms.com SMS service.
+using the [aspsms.com](www.aspsms.com) SMS service.
 
-This is quite old code, but I still use it from time to time so this
-is published here.
+Disclaimer: This is quite old code, so it may not be using all the
+latest PHP functionality.
 
-# Usage
+## Usage
 
 In order to use the SMS class, you need to have an account at aspsms.com.  You
 also need to make sure that your web server is able to access xml1.aspsms.com
@@ -45,7 +45,7 @@ the message to the recipients.
 
 An example for testing the class is provided in the file `example.php`.
 
-# Other Features
+## Other Features
 
 The SMS class also offers access to the following extended features offered by
 aspsms.com:
@@ -88,7 +88,7 @@ $sms->setTimezone("+4");
 $sms->setDeferred("18092007140000");
 ```
 
-# Delivery Status Notification
+## Delivery Status Notification
 
 aspsms.com supports delivery status notification that lets you know if a
 message has been delivered to a recipient or not. As soon as the status of a
@@ -138,10 +138,10 @@ For a comprehensive list of "Reason code" and "Delivery status", please refer
 to the ASPSMS Documentation. Please note that if no <TRN> is given in the URL,
 the unique identifier will be appended to the URL.
 
-# Acknowledgements
+## Acknowledgements
 
    The delivery status notification feature in the PHPASPSMS script was
-   sponsored by Reto Waldvogel of [4]Europlink. Thanks!
+   sponsored by Reto Waldvogel of Europlink. Thanks!
 
    The Nagios wrapper scripts in the /contrib directory were contributed
    by Daniel Lorch. Thanks!
@@ -149,7 +149,7 @@ the unique identifier will be appended to the URL.
    Iwan Schmid contributed the "DeferredDeliveryTime" functionality.
    Thanks!
 
-# License
+## License
 
    This program is free software; you can redistribute it and/or modify it
    under the terms of the GNU General Public License as published by the
