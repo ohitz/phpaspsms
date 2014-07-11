@@ -1,0 +1,26 @@
+#!/usr/bin/php -q
+<?php
+
+/*
+ * Send SMS via aspsms.com
+ * Takes destination number as first argument, text as second argument. 
+ *
+ * by Daniel Lorch <daniel.lorch@tsunamihost.ch> 2004
+ */
+
+require_once dirname(__FILE__) . '/SMS.inc';
+require_once dirname(__FILE__) . '/sms_config.php';
+
+if(count($_SERVER['argv']) < 3) {
+  die('Usage: ' . $_SERVER['argv'][0] . " <mobile phone number> <text>\n"); 
+}
+
+$sms = new SMS($config['username'], $config['password']);
+$sms->setOriginator($config['originator']);
+$sms->addRecipient($_SERVER['argv'][1]);
+$sms->setContent($_SERVER['argv'][2]);
+if(!$sms->sendSMS()) {
+  die('Error: ' . $sms->getErrorDescription() . "\n");
+}
+
+?>

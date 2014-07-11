@@ -1,0 +1,16 @@
+<?php
+
+/* ASPSMS.com login */
+$config['username'] = "";
+$config['password'] = "";
+$config['originator'] = "";
+
+/* notify if credit limit is less than configured threshold */
+$config['min_credit'] = "250";
+$config['credit_notify'] = array(
+  'joe@example.com',
+  'alice@example.net'
+);
+$config['mailfrom'] = "noreply@yourdomain.com";
+
+?>

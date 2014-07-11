@@ -1,0 +1,15 @@
+Extremely simple wrapper scripts for ASPSMS, which can be used on the shell. I am using
+these scripts to send out nagios.org monitoring notifications via SMS. 
+
+Installation instructions:
+- edit sms_config.php-dist, enter username/password/originator etc., save as sms_config.php
+- make sure the shebang line #!/usr/bin/php points to the PHP interpreter on your
+  system. You can search for php with `which php`.
+- make sure sms_notify and sms_creditcheck are executable, otherwise do a
+  `chmod +x sms_notify` and `chmod +x sms_creditcheck`
+- put SMS.inc into the same directory (or adjust the include lines to the path where
+  SMS.inc can be located)
+
+Have fun.
+
+                                     -- Daniel Lorch <daniel.lorch@tsunamihost.ch> 2005

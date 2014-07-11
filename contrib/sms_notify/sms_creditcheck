@@ -1,0 +1,26 @@
+#!/usr/bin/php -q
+<?php
+
+/*
+ * Checks whether credit at aspsms.com is still sufficient. Run this
+ * script periodically
+ *
+ * by Daniel Lorch <daniel.lorch@tsunamihost.ch> 2004
+ */
+
+require_once dirname(__FILE__) . '/SMS.inc';
+require_once dirname(__FILE__) . '/sms_config.php';
+
+$sms = new SMS($config['username'], $config['password']);
+
+if(!$sms->showCredits()) {
+  die('Error: ' . $sms->getErrorDescription() . "\n");
+}
+
+if($sms->getCredits() < $config['min_credit']) {
+  for($i=0; $i<count($config['credit_notify']); ++$i) {
+    mail($config['credit_notify'][$i], "ASPSMS.com low credit", "Current credit: " . $sms->getCredits(), "From: " . $config['mailfrom']);
+  }
+} 
+
+?>
